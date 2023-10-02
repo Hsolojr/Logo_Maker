@@ -69,12 +69,12 @@ Create custom SVG logos quickly with this Node.js-based tool. Choose text and sh
 
 ## Live Demo
 
-View a live demo [here](https://drive.google.com/file/d/1n576b_oTPsJy7pzm8paIMHzRXsY0SQmZ/view?usp=sharing).
+View a live demo [here]().
 
 ## Credits
 
 - Developed using Node.js, Inquirer, fs, and Jest.
-- Created by [Your Name](https://github.com/yourusername).
+- Created by [Junior Solorio](https://github.com/yourusername).
 
 ## License
 
