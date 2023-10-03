@@ -56,7 +56,7 @@ Create custom SVG logos quickly with this Node.js-based tool. Choose text and sh
 
 ## Live Demo
 
-View a live demo [here]().
+View a live demo [here](https://github.com/Hsolojr/Logo_Maker/assets/139496108/d5ce3d52-50ff-4dfa-82ca-5af411a7cce0).
 <img width="291" alt="Screen Shot 2023-10-02 at 5 39 03 PM" src="https://github.com/Hsolojr/Logo_Maker/assets/139496108/fc538d26-bb74-4c6f-b3ee-b997f58c3b7a">
 ## Credits
 
