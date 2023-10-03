@@ -1,46 +1,82 @@
-const fs = require('fs');
-const inquirer = require('inquirer');
-const { createLogo, generateSVG } = require('./lib/builder.js'); // You'll need to implement the logo generation logic in a separate file
+const fs = require('fs').promises; // Importing the 'fs' module with promises support
+const inquirer = require('inquirer'); // Importing the 'inquirer' module for user prompts
+const buildSVG = require('./lib/builder.js'); // Importing the 'buildSVG' function from the './lib/builder.js' file
 
-async function promptUser() {
+async function generateLogo() {
   try {
-    const userInput = await inquirer.prompt([
+    // Prompt the user for input using 'inquirer'
+    const logoParams = await inquirer.prompt([
       {
-        name: 'text',
-        message: 'Enter up to three characters:',
+        type: 'input',
+        name: 'logo',
+        message: 'Enter up to three characters for your logo:',
         validate: (input) => input.length <= 3,
       },
       {
-        name: 'textColor',
-        message: 'Enter text color (keyword or hex):',
-      },
-      {
-        name: 'shape',
         type: 'list',
+        name: 'shape',
         message: 'Choose a shape:',
-        choices: ['circle', 'triangle', 'square'],
+        choices: ['Triangle', 'Circle', 'Square'],
       },
       {
-        name: 'shapeColor',
-        message: 'Enter shape color (keyword or hex):',
+        type: 'list',
+        name: 'textColor',
+        message: 'Choose your text color:',
+        choices: ['Black', 'White', 'Blue', 'Grey', 'Custom'],
+       
+      },
+      {
+        type: 'input',
+        name: 'customTextColor',
+        message:
+          'Enter your custom text color (Color name or hex):',
+        
+      },
+      {
+        type: 'list',
+        name: 'colorChoice',
+        message: 'Pick the color you want the shape to be:',
+        choices: ['Black', 'Red', 'green', 'Pink', 'Custom'],
+      
+      },
+      {
+        type: 'input',
+        name: 'customShapeColor',
+        message:
+          'Enter your custom shape color (Color name or hex):',
+       
       },
     ]);
 
-    // Call your logo generation function with userInput
-    const svgContent = createLogo(userInput);
+    // Destructure user input into individual variables
+    const {
+      logo,
+      shape,
+      textColor,
+      customTextColor,
+      colorChoice,
+      customShapeColor,
+    } = logoParams;
 
-    // Save the generated SVG content to a file
-    fs.writeFileSync('logo.svg', svgContent);
+    // Determine the text and shape color based on user input
+    const textColorChoice = customTextColor || textColor;
+    const shapeColorChoice = customShapeColor || colorChoice;
 
+    // Generate the SVG logo using the 'buildSVG' function
+    const svgCreator = buildSVG({
+      logo,
+      shape,
+      textColor: textColorChoice,
+      colorChoice: shapeColorChoice,
+    });
+
+    // Write the generated SVG content to a file
+    await fs.writeFile('./Result/logo.svg', svgCreator);
     console.log('Generated logo.svg');
-
-    // Generate a 300x200 PNG from the SVG (optional)
-    await generateSVG('logo.svg', 'logo.png', 300, 200);
-    
-    console.log('Generated logo.png');
   } catch (error) {
-    console.error('Error:', error);
+    console.error('An error occurred:', error);
   }
 }
 
-promptUser();
+// Call the 'generateLogo' function to start logo generation
+generateLogo();

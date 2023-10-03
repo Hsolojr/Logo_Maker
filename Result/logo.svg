@@ -1,0 +1,5 @@
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+      <circle cx="200" cy="200" r="200" stroke="hex" stroke-width="4px" fill="hex" />
+      <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="140" font-weight="bold" fill="hex">sss</text>
+    </svg>

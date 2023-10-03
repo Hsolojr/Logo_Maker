@@ -19,19 +19,6 @@ Create custom SVG logos quickly with this Node.js-based tool. Choose text and sh
 
      ```bash
      brew install node
-     ```
-
-   - **Windows:**
-
-     ```bash
-     scoop install nodejs
-     ```
-
-   - **Linux:**
-
-     ```bash
-     apk add nodejs npm
-     ```
 
 2. **Clone the Repository:**
 
@@ -70,18 +57,13 @@ Create custom SVG logos quickly with this Node.js-based tool. Choose text and sh
 ## Live Demo
 
 View a live demo [here]().
-
+<img width="291" alt="Screen Shot 2023-10-02 at 5 39 03 PM" src="https://github.com/Hsolojr/Logo_Maker/assets/139496108/fc538d26-bb74-4c6f-b3ee-b997f58c3b7a">
 ## Credits
 
 - Developed using Node.js, Inquirer, fs, and Jest.
-- Created by [Junior Solorio](https://github.com/yourusername).
+- Created by [Junior Solorio](https://github.com/hsolojr).
 
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Contributions
-
-If you'd like to contribute, please refer to the [Contributor Covenant](https://www.contributor-covenant.org/) for guidelines.
-
----
